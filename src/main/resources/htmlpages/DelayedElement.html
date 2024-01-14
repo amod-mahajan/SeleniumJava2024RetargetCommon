@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Created Text Box</title>
+</head>
+<body>
+
+<!-- Your content before the text box is created -->
+<h1>Example Page</h1>
+<p>This is some content before the text box is created.</p>
+
+<!-- Container to hold the dynamically created text box -->
+<div id="textBoxContainer"></div>
+
+<script>
+    // Function to create and append a text box after a delay
+    function createAndAppendTextBox() {
+        // Create a new text box element
+        var newTextBox = document.createElement('input');
+
+        // Set the type of the text box
+        newTextBox.type = 'text';
+
+        // Get the container element
+        var container = document.getElementById('textBoxContainer');
+
+        // Append the new text box element to the container
+        container.appendChild(newTextBox);
+    }
+
+    // Set a delay of 10000 milliseconds (10 seconds) before creating and appending the text box
+    setTimeout(createAndAppendTextBox, 10000);
+</script>
+
+</body>
+</html>
