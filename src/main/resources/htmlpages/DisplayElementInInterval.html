@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Display</title>
+</head>
+<body>
+
+<div id="buttonContainer"></div>
+
+<script>
+    // Function to create and append a button
+    function createButton(buttonNumber) {
+      var button = document.createElement("button");
+      button.innerHTML = "Button " + buttonNumber;
+
+      // You can add event listeners or other attributes to the button if needed
+
+      document.getElementById("buttonContainer").appendChild(button);
+
+      // Add a line break after each button
+      document.getElementById("buttonContainer").appendChild(document.createElement("br"));
+    }
+
+    // Set interval to create 5 buttons with a 5-second delay
+    var buttonCounter = 1;
+    var intervalId = setInterval(function() {
+      createButton(buttonCounter);
+      buttonCounter++;
+
+      // Stop the interval after creating 5 buttons
+      if (buttonCounter > 5) {
+        clearInterval(intervalId);
+      }
+    }, 50000000);
+</script>
+
+</body>
+</html>

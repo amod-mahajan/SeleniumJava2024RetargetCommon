@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Element</title>
+    <style>
+        .hidden-element {
+            display: none;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            document.getElementById('output').innerHTML = 'Hello';
+        }
+    </script>
+</head>
+
+<body>
+
+<button id="btn1" >Visible Button</button>
+
+<div class="hidden-element">
+    <button id="btn2" onclick="showMessage()">Try Clicking On Me</button>
+    <div id="output"></div>
+</div>
+
+</body>
+</html>
