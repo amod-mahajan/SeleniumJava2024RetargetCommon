@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled Text Box and Buttons</title>
+
+    <style>
+        .disabled {
+          pointer-events: none;
+          opacity: 0.5; /* Optionally reduce opacity for a visual cue */
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    First Text Box
+    <input type="text" id="enabledTextBox">
+    <br>
+    <br>
+    Second Text Box
+    <input type="text" id="disabledTextBox" disabled>
+
+    <br>
+    <br>
+    Third Text Box
+    <input type="text" class="disabled">
+
+    <br>
+    <br>
+
+    First Button
+    <button type="button" disabled>Disabled Button</button>
+    <br>
+    <br>
+    Second Button
+    <button type="submit">Enabled Button</button>
+
+    <br>
+    <br>
+    First Textarea
+    <textarea readonly>This is a disabled textarea</textarea>
+
+</form>
+
+</body>
+</html>

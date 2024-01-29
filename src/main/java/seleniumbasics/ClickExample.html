@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Effect for 10 Seconds</title>
+    <style>
+        #reloadButton {
+            position: relative;
+        }
+
+        #loadingSpinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        #reloadText {
+            color: green;
+        }
+    </style>
+    <script>
+        function simulateReload() {
+            // Hide the button
+            document.getElementById('reloadButton').style.display = 'none';
+
+            // Show the loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+
+            // Show the text
+            document.getElementById('reloadText').textContent = 'Reloading for 10 seconds...';
+
+            // Delay the page load for 10 seconds
+            setTimeout(function() {
+                // Show the button
+                document.getElementById('reloadButton').style.display = 'block';
+
+                // Hide the loading spinner
+                document.getElementById('loadingSpinner').style.display = 'none';
+
+                // Reset the text
+                document.getElementById('reloadText').textContent = '';
+            }, 10000); // 10000 milliseconds = 10 seconds
+        }
+    </script>
+</head>
+<body>
+
+<h1>Click the button to simulate a 10-second reload</h1>
+
+<button id="reloadButton" onclick="simulateReload()">Reload Page</button>
+<div id="loadingSpinner">Loading...</div>
+<p id="reloadText"></p>
+
+</body>
+</html>
