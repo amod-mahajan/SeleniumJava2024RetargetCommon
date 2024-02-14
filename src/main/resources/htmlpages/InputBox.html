@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Box Positioning</title>
+    <style>
+        /* CSS to style the text boxes */
+        .textbox {
+            width: 200px;
+            height: 40px;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+        }
+
+        .centered {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .original {
+            top: 20px; /* Adjust this value for the original position */
+            left: 20px; /* Adjust this value for the original position */
+        }
+
+        .highlighted {
+            border-color: blue;
+        }
+
+        /* CSS to style the overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+            z-index: 999; /* ensures it's above other content */
+            display: none; /* initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- HTML form with multiple text boxes -->
+<form id="myForm">
+    <input id="t1" type="text" class="textbox original" placeholder="Textbox 1" data-index="1">
+    <input type="text" class="textbox original" placeholder="Textbox 2" data-index="2" style="top: 80px;">
+    <input type="text" class="textbox original" placeholder="Textbox 3" data-index="3" style="top: 140px;">
+</form>
+
+<!-- Script to handle text box positioning -->
+<script>
+    const textboxes = document.querySelectorAll('.textbox');
+
+    // Add event listener for input event
+    textboxes.forEach(textbox => {
+        textbox.addEventListener('input', function() {
+            // Add 'highlighted' class when typing starts
+            this.classList.add('highlighted');
+            // Show the overlay
+            document.querySelector('.overlay').style.display = 'block';
+            // Bring the textbox to the center
+            this.classList.remove('original');
+            this.classList.add('centered');
+        });
+
+        // Add event listener for blur event (when clicked outside the textbox)
+        textbox.addEventListener('blur', function() {
+            // Remove 'highlighted' class when focus is lost
+            this.classList.remove('highlighted');
+            // Hide the overlay
+            document.querySelector('.overlay').style.display = 'none';
+            // Bring the textbox back to its original position
+            this.classList.remove('centered');
+            this.classList.add('original');
+        });
+
+        // Add event listener for pressing Enter
+        textbox.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission
+                this.blur(); // Remove focus from the textbox
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
