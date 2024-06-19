@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Display</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .book {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px;
+            width: 20%;
+            box-shadow: 2px 2px 12px #aaa;
+        }
+        .book h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        @media (max-width: 800px) {
+            .book {
+                width: 45%;
+            }
+        }
+        @media (max-width: 500px) {
+            .book {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Book List</h1>
+<div class="container">
+    <div class="book">
+        <h2>Book Title 1</h2>
+        <p><strong>Author:</strong> Author 1</p>
+        <p><strong>Price:</strong> $10.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 2</h2>
+        <p><strong>Author:</strong> Author 2</p>
+        <p><strong>Price:</strong> $12.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 3</h2>
+        <p><strong>Author:</strong> Author 3</p>
+        <p><strong>Price:</strong> $15.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 4</h2>
+        <p><strong>Author:</strong> Author 4</p>
+        <p><strong>Price:</strong> $9.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 5</h2>
+        <p><strong>Author:</strong> Author 5</p>
+        <p><strong>Price:</strong> $14.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 6</h2>
+        <p><strong>Author:</strong> Author 6</p>
+        <p><strong>Price:</strong> $11.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 7</h2>
+        <p><strong>Author:</strong> Author 7</p>
+        <p><strong>Price:</strong> $13.99</p>
+    </div>
+    <div class="book">
+        <h2>Book Title 8</h2>
+        <p><strong>Author:</strong> Author 8</p>
+        <p><strong>Price:</strong> $16.99</p>
+    </div>
+</div>
+</body>
+</html>

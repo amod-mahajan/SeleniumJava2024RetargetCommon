@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar Example</title>
+  <!-- Include Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+<h1>Interactive Calendar Example</h1>
+<form>
+  <label for="birthday">Select your birthday:</label>
+  <input type="text" id="birthday" name="birthday">
+  <br><br>
+  <label for="meeting">Select a meeting date:</label>
+  <input type="text" id="meeting" name="meeting">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Include Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  // Initialize Flatpickr on the inputs
+  flatpickr("#birthday", {
+      dateFormat: "Y-m-d"
+  });
+  flatpickr("#meeting", {
+      dateFormat: "Y-m-d"
+  });
+</script>
+</body>
+</html>

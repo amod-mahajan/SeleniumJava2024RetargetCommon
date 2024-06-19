@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XPath Axes Example</title>
+</head>
+<body>
+<!-- Parent Axis Example -->
+<div id="parent">
+    <p>This is a parent element.</p>
+    <!-- Child Axis Example -->
+    <div id="child">
+        <p>This is a child element.</p>
+        <!-- Descendant Axis Example -->
+        <div id="descendant">
+            <p>This is a descendant element.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Following-sibling Axis Example -->
+<div id="sibling1">
+    <p>This is the first sibling.</p>
+</div>
+<div id="sibling2">
+    <p>This is the following sibling.</p>
+</div>
+
+<!-- Preceding-sibling Axis Example -->
+<div id="sibling3">
+    <p>This is the preceding sibling.</p>
+</div>
+
+<!-- Following Axis Example -->
+<div id="following">
+    <p>This is a following element.</p>
+</div>
+
+<!-- Preceding Axis Example -->
+<div id="preceding">
+    <p>This is a preceding element.</p>
+</div>
+
+<!-- Ancestor Axis Example -->
+<div id="ancestor">
+    <div>
+        <div>
+            <p>This is a descendant element with multiple ancestors.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Namespace Axis Example -->
+<div xmlns:ex="http://example.com/namespace" id="namespace">
+    <ex:example>This element is in a namespace.</ex:example>
+</div>
+
+<!-- Attribute Axis Example -->
+<div id="attribute" class="example">
+    <p>This element has attributes.</p>
+</div>
+</body>
+</html>
