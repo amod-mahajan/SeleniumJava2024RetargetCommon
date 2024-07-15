@@ -11,14 +11,7 @@ public class ClickExample {
     public static void main(String[] args) {
 
         ChromeDriver chromeDriver = new ChromeDriver();
-//        chromeDriver.get("https://practicesoftwaretesting.com/#/");
-//        WebElement element = chromeDriver.findElement(By.linkText("Sign in"));
-//
-//        element.click();
-
-
         chromeDriver.get("https://www.cnn.com/");
-
         WebElement element = chromeDriver.findElement(By.partialLinkText("Terms of Use"));
         System.out.println(new Date());
         element.click();
