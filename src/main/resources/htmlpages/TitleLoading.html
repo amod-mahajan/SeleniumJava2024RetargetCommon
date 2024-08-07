@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to get a random time in milliseconds between min and max
+            function getRandomTime(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            // Function to update the displayed title in the body
+            function updateDisplayedTitle() {
+                document.getElementById("titleDisplay").textContent = document.title;
+            }
+
+            // Initial update to display "Loading"
+            updateDisplayedTitle();
+
+            // Set title to "Loaded" after a random time between 1 and 3 seconds
+            setTimeout(function() {
+                document.title = "Loaded";
+                updateDisplayedTitle();
+                // Set title to "Completed" after an additional random time between 1 and 3 seconds
+                setTimeout(function() {
+                    document.title = "Completed";
+                    updateDisplayedTitle();
+                }, getRandomTime(1000, 3000));
+            }, getRandomTime(1000, 3000));
+        });
+    </script>
+</head>
+<body>
+<h1>Current Title: <span id="titleDisplay">Loading</span></h1>
+</body>
+</html>

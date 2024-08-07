@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .details {
+            font-size: 18px;
+            color: #333;
+            background-color: #e6f7ff;
+            padding: 20px;
+            border: 1px solid #b3e0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function changeTitle() {
+            const oldTitle = document.title;
+            const titles = ["New Title 1", "New Title 2", "New Title 3", "New Title 4", "New Title 5"];
+            const newTitle = titles[Math.floor(Math.random() * titles.length)];
+            const minSeconds = 1;
+            const maxSeconds = 10;
+            const randomSeconds = Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds;
+            const randomMilliseconds = randomSeconds * 1000;
+
+            setTimeout(() => {
+                document.title = newTitle;
+                const detailsDiv = document.querySelector(".details");
+                detailsDiv.innerHTML = `
+                    <p>Old Title: ${oldTitle}</p>
+                    <p>New Title: ${newTitle}</p>
+                    <p>Time Taken to Change Title: ${randomSeconds} seconds</p>
+                `;
+            }, randomMilliseconds);
+        }
+    </script>
+</head>
+<body>
+<button onclick="changeTitle()">Change Title</button>
+<div class="details">
+    <p>Old Title: Initial Title</p>
+    <p>New Title: </p>
+    <p>Time Taken to Change Title: </p>
+</div>
+</body>
+</html>

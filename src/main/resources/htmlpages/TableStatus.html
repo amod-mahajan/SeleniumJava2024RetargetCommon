@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Random Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        td.status-new {
+            background-color: #ffc107;
+            color: #000;
+        }
+        td.status-completed {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<button onclick="addRow()">Create New Application</button>
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Application ID</th>
+        <th>Status</th>
+        <th>Time to Complete (seconds)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Rows will be added here -->
+    </tbody>
+</table>
+
+<script>
+    let idCounter = 1;
+
+    function getRandomApplicationId() {
+        return Math.floor(Math.random() * 1000000) + 1;
+    }
+
+    function addRow() {
+        const table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const idCell = newRow.insertCell(0);
+        const applicationIdCell = newRow.insertCell(1);
+        const statusCell = newRow.insertCell(2);
+        const timeCell = newRow.insertCell(3);
+
+        idCell.textContent = idCounter++;
+        applicationIdCell.textContent = getRandomApplicationId();
+        statusCell.textContent = "NEW";
+        statusCell.className = "status-new";
+        timeCell.textContent = "";  // Empty initially
+
+        const randomSeconds = Math.floor(Math.random() * 5000) + 1000;
+
+        setTimeout(() => {
+            statusCell.textContent = "Completed";
+            statusCell.className = "status-completed";
+            timeCell.textContent = (randomSeconds / 1000).toFixed(2);  // Set the time after completion
+        }, randomSeconds);
+    }
+</script>
+</body>
+</html>
