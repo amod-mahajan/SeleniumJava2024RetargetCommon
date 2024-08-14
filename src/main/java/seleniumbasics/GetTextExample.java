@@ -21,7 +21,7 @@ public class GetTextExample {
 //        chromeDriver.quit();
 
         chromeDriver.get("C:\\Users\\amodm\\IdeaProjects\\SeleniumJava2024RetargetCommon\\src\\main\\resources\\htmlpages\\HiddenInnerText.html");
-        System.out.println(chromeDriver.findElement(By.tagName("li")).getText());
+        System.out.println(chromeDriver.findElement(By.id("li")).getText());
 
     }
 }
