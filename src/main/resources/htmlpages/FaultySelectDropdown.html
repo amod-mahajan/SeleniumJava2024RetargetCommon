@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Hidden Bug</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        position: relative; /* Create a positioned container for the dropdown */
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 250px;
+        text-align: center;
+    }
+
+    label {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+        display: block;
+        font-weight: bold;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+        appearance: auto;
+        z-index: 1; /* Ensure it stays below the invisible overlay */
+    }
+
+    select:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    option {
+        padding: 10px;
+        background-color: #fff;
+        color: #333;
+    }
+
+    option:hover {
+        background-color: #f0f0f0;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; /* Invisible overlay */
+        z-index: 2; /* Prevent human interaction by overlaying above the dropdown */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <label for="dropdown">Select an Option:</label>
+  <select id="dropdown">
+    <option value="" disabled selected>Select</option>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+    <option value="option4">Option 4</option>
+    <option value="option5">Option 5</option>
+  </select>
+  <div class="overlay"></div> <!-- Invisible overlay blocking human interaction -->
+</div>
+
+</body>
+</html>

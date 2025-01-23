@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        h1 {
+          color: #333;
+          text-align: center;
+        }
+        .container {
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 8px;
+          max-width: 800px;
+          margin: auto;
+        }
+        .container > p {
+          color: #666;
+        }
+        #main {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .box {
+          border: 1px solid #ccc;
+          padding: 10px;
+          border-radius: 4px;
+        }
+        .highlight {
+          background-color: #f9f9f9;
+          color: #007bff;
+        }
+        .list {
+          list-style: none;
+          padding: 0;
+        }
+        .list li {
+          padding: 8px;
+          margin-bottom: 5px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          background-color: #f3f3f3;
+        }
+        .list li:nth-child(even) {
+          background-color: #e7e7e7;
+        }
+        .list-item.active {
+          background-color: #ffd700;
+          color: #333;
+          font-weight: bold;
+        }
+        .sibling-example {
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #f1f1f1;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+        }
+        .only-child-example p:only-child {
+          color: #28a745;
+          font-weight: bold;
+        }
+        .empty-example {
+          padding: 10px;
+          background-color: #ffe8e8;
+          border: 1px dashed #e57373;
+        }
+        .empty-example:empty {
+          background-color: #f8d7da;
+          border-color: #f5c6cb;
+        }
+
+        label {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Selectors Test Page</h1>
+<div class="container">
+    <p>This page contains elements to test different CSS selectors in Selenium.</p>
+
+    <div id="main">
+        <!-- Basic Selectors -->
+        <button id="submit-button" class="highlight">Submit Button (ID & Class Selector)</button>
+        <input type="text" class="form-control highlight" placeholder="Input Field (Class Selector)" />
+
+        <!-- Attribute Selectors -->
+        <input type="text" name="username" placeholder="Username (Attribute Selector)" />
+        <input type="text" name="useremail" placeholder="User Email (Starts with 'user')" />
+        <input type="text" name="fullname" placeholder="Full Name (Ends with 'name')" />
+        <input type="text" name="superuser" placeholder="Super User (Contains 'user')" />
+
+        <label>
+            <input id= "Checked Checkbox" type="checkbox" checked>
+            Checked Checkbox
+        </label>
+        <br>
+        <label>
+            <input id= "Disabled Checkbox" type="checkbox" disabled>
+            Disabled Checkbox
+        </label>
+
+        <!-- Pseudo-classes -->
+        <ul class="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li class="list-item active">Item 4 (Active)</li>
+            <li>Item 5</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

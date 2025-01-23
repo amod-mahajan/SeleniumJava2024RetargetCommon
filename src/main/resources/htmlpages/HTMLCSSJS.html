@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .visited {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Below is list of popular search engines</h1>
+<p>Click on links to navigate to search engine website</p>
+<ul>
+    <li><a href="https://www.google.com" target="_blank" onclick="markAsVisited(this)">Google</a></li>
+    <li><a href="https://www.bing.com" target="_blank" onclick="markAsVisited(this)">Bing</a></li>
+    <li><a href="https://www.duckduckgo.com" target="_blank" onclick="markAsVisited(this)">DuckDuckGo</a></li>
+</ul>
+<a href="#">Click here for more information</a>
+
+<script>
+    function markAsVisited(link) {
+        link.classList.add('visited');
+        // Create a span element to show "visited" text
+        let visitedText = document.createElement('span');
+        visitedText.textContent = ' (visited)';
+        visitedText.style.color = 'red'; // Optional: match color with the link
+        link.parentNode.appendChild(visitedText);
+    }
+</script>
+</body>
+</html>

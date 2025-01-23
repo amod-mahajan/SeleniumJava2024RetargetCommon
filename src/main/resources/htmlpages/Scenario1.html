@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Centered login form container */
+        #loginForm {
+            width: 100%;
+            max-width: 350px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Header */
+        #loginForm h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        /* Login button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        button:not(:disabled):hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginButton" disabled>Login</button>
+</div>
+
+<script>
+    const usernameField = document.getElementById('username');
+    const passwordField = document.getElementById('password');
+    const loginButton = document.getElementById('loginButton');
+
+    function checkFields() {
+        const usernameValue = usernameField.value.trim();
+        const passwordValue = passwordField.value.trim();
+        loginButton.disabled = !(usernameValue && passwordValue);
+    }
+
+    // Add event listeners for input fields to check for changes
+    usernameField.addEventListener('input', checkFields);
+    passwordField.addEventListener('input', checkFields);
+
+    // Add specific event listener to detect "Backspace" for each field
+    usernameField.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' && usernameField.value.length === 1) {
+            loginButton.disabled = true;
+        }
+    });
+
+    passwordField.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' && passwordField.value.length === 1) {
+            loginButton.disabled = true;
+        }
+    });
+</script>
+</body>
+</html>

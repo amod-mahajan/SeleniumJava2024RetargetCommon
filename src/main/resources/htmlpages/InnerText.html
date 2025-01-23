@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Elements with Inner Text</title>
+  <style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    h1, h2, h3 {
+        color: #4CAF50;
+    }
+
+    p {
+        margin-bottom: 1em;
+        font-size: 1.1em;
+    }
+
+    span {
+        display: inline-block;
+        background-color: #e7f3fe;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    a {
+        color: #007BFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    ul, ol {
+        margin: 10px 0;
+        padding-left: 40px;
+    }
+
+    ul li, ol li {
+        margin: 5px 0;
+    }
+
+    div {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    blockquote {
+        font-style: italic;
+        border-left: 5px solid #ccc;
+        padding-left: 10px;
+        margin: 10px 0;
+        color: #555;
+    }
+
+    label {
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    table th, table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    dl {
+        margin-top: 10px;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-left: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+    }
+
+    code {
+        background-color: #f4f4f4;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: monospace;
+        color: #d63384;
+    }
+
+    pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+
+    strong {
+        color: #d63384;
+    }
+
+    em {
+        color: #007BFF;
+        font-style: italic;
+    }
+
+    abbr {
+        text-decoration: dotted underline;
+        cursor: help;
+    }
+
+    q {
+        quotes: "“" "”" "‘" "’";
+        font-style: italic;
+    }
+
+    q::before {
+        content: open-quote;
+    }
+
+    q::after {
+        content: close-quote;
+    }
+  </style>
+</head>
+<body>
+<h1>HTML Elements with Inner Text</h1>
+<p>This is a paragraph with inner text.</p>
+<h2>Subheading</h2>
+<h3>Another Subheading</h3>
+
+<span>This is a span with inner text.</span>
+<a href="https://example.com">Click here</a>
+<button>Submit</button>
+
+<ul>
+  <li>First unordered item</li>
+  <li>Second unordered item</li>
+</ul>
+<ol>
+  <li>First ordered item</li>
+  <li>Second ordered item</li>
+</ol>
+
+<div>This is a div with inner text.</div>
+<blockquote>This is a blockquote with inner text.</blockquote>
+
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<table>
+  <tr>
+    <td>Cell with text</td>
+    <td>Another cell</td>
+  </tr>
+</table>
+
+<dl>
+  <dt>Definition Term</dt>
+  <dd>Definition Description</dd>
+</dl>
+
+<textarea>Default text in textarea</textarea>
+
+<code>console.log('Hello, World!');</code>
+<pre>
+function greet() {
+    console.log('Hello, World!');
+}
+    </pre>
+
+<strong>Important text</strong>
+<em>Emphasized text</em>
+
+<abbr title="HyperText Markup Language">HTML</abbr>
+<q>This is a quoted text.</q>
+</body>
+</html>

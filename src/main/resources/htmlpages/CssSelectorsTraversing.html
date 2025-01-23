@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested List with Attributes</title>
+    <style>
+        /* Basic styling for the list */
+        ul {
+            list-style-type: disc;
+            margin: 10px 0 10px 20px;
+            padding: 0;
+        }
+
+        ul.nested {
+            list-style-type: circle; /* Change bullet style for nested lists */
+        }
+
+        ul.nested ul.nested {
+            list-style-type: square; /* Change bullet style for deeper levels */
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Styling for IDs */
+        #main-list {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        #main-list li {
+            color: #2c3e50;
+        }
+
+        #nested-list-2 li {
+            color: #16a085;
+        }
+
+        #nested-list-4 li {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<h1>Styled Nested List with Attributes</h1>
+<ul id="main-list" name="main-list">
+    <li name="item-1">Item 1</li>
+    <li name="item-2">Item 2
+        <ul id="nested-list-2" class="nested" name="nested-list-2">
+            <li name="sub-item-2-1">Sub-item 2.1</li>
+            <li name="sub-item-2-2">Sub-item 2.2</li>
+            <li name="sub-item-2-3">Sub-item 2.3
+                <ul id="nested-list-2-3" class="nested" name="nested-list-2-3">
+                    <li name="sub-item-2-3-1">Sub-item 2.3.1</li>
+                    <li name="sub-item-2-3-2">Sub-item 2.3.2</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li name="item-3">Item 3</li>
+    <li name="item-4">Item 4
+        <ul id="nested-list-4" class="nested" name="nested-list-4">
+            <li name="sub-item-4-1">Sub-item 4.1</li>
+            <li name="sub-item-4-2">Sub-item 4.2</li>
+        </ul>
+    </li>
+    <li name="item-5">Item 5</li>
+</ul>
+
+<div>
+    <p>This is a paragraph before the h2.</p>
+    <h2>Heading 2</h2>
+    <p>This is a paragraph after the h2.</p>
+    <p>This is another paragraph after the h2.</p>
+    <span>This is not a paragraph, but a span, after h2.</span>
+    <p>This is another paragraph, and it is still after h2.</p>
+</div>
+
+</body>
+</html>

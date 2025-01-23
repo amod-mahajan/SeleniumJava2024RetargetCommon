@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Loader with Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .component {
+            flex: 1;
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="component1" class="component">
+    <h2>Image 1</h2>
+    <div id="image1">Loading...</div>
+</div>
+
+<div id="component2" class="component">
+    <h2>Image 2</h2>
+    <div id="image2">Loading...</div>
+</div>
+
+<div id="component3" class="component">
+    <h2>Image 3</h2>
+    <div id="image3">Loading...</div>
+</div>
+
+<script>
+    // Fetch Random Image 1 (Simulates Success)
+    fetch('https://picsum.photos/200')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch image');
+            }
+            document.getElementById('image1').innerHTML = `
+                <img src="${response.url}" alt="Random Image 1">
+            `;
+        })
+        .catch(error => {
+            document.getElementById('image1').innerHTML = `<span class="error">Error occurred.</span>`;
+        });
+
+    // Fetch Random Image 2 (Simulates Success)
+    fetch('https://picsum.photos/200')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch image');
+            }
+            document.getElementById('image2').innerHTML = `
+                <img src="${response.url}" alt="Random Image 2">
+            `;
+        })
+        .catch(error => {
+            document.getElementById('image2').innerHTML = `<span class="error">Error occurred.</span>`;
+        });
+
+    // Fetch Random Image 3 (Simulates Failure)
+    fetch('https://picsum.photos/invalid-endpoint')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch image');
+            }
+            document.getElementById('image3').innerHTML = `
+                <img src="${response.url}" alt="Random Image 3">
+            `;
+        })
+        .catch(error => {
+            document.getElementById('image3').innerHTML = `<span class="error">Error occurred.</span>`;
+        });
+</script>
+
+</body>
+</html>
